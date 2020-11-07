@@ -13,27 +13,27 @@ if __name__ == "__main__":
     my_event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
 
     def on_created(event):
-        # function to get name of last saved screenshot as a str
+        # function to get name of last saved screenshot as a string
         def getName():
-            list_of_files = glob.glob('/Users/chelsea.vizer/Documents/*.png') # * means all if need specific format then *.csv
+            list_of_files = glob.glob('/Users/chelsea.vizer/Documents/*.png')
             latest_file = max(list_of_files, key=os.path.getctime)
             latest_file = str(latest_file)
             print(latest_file)
             fileName = latest_file[31:]
             return fileName
 
-        # x is the string of the screenshot name
+        # x is the string of the screenshot name.
         x = getName()
 
-        # Assign path for original screenshot to variable "ogPath"
-        ogPath = "/Users/chelsea.vizer/Documents/{}".format(x)
+        # Assign path for original screenshot to variable "originalPath"
+        originalPath = "/Users/chelsea.vizer/Documents/{}".format(x)
 
         # Assign path for new location of screenshot to variable "newPath"
         newPath = "/Users/chelsea.vizer/Documents/Screenshots/{}".format(x)
 
         # function that moves the file
         def moveFile():
-            shutil.move(ogPath, newPath)
+            shutil.move(originalPath, newPath)
 
         print("The screenshot has been moved to Documents/Screenshots.")
         moveFile()
