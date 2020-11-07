@@ -5,8 +5,6 @@ import shutil
 import glob
 import os
 
-# Program that watches the Documents directory. If a screenshot is taken, it moves the screenshot to Documents/Screenshots.
-
 if __name__ == "__main__":
     patterns = "*"
     ignore_patterns = ""
