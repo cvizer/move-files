@@ -15,7 +15,7 @@ if __name__ == "__main__":
     def on_created(event):
         # function to get name of last saved screenshot as a string
         def getName():
-            list_of_files = glob.glob('/Users/chelsea.vizer/Documents/*.png')
+            list_of_files = glob.glob('/Users/<<Your user account>>/Documents/*.png')
             latest_file = max(list_of_files, key=os.path.getctime)
             latest_file = str(latest_file)
             print(latest_file)
@@ -26,10 +26,10 @@ if __name__ == "__main__":
         x = getName()
 
         # Assign path for original screenshot to variable "originalPath"
-        originalPath = "/Users/chelsea.vizer/Documents/{}".format(x)
+        originalPath = "/Users/<<Your user account>>/Documents/{}".format(x)
 
         # Assign path for new location of screenshot to variable "newPath"
-        newPath = "/Users/chelsea.vizer/Documents/Screenshots/{}".format(x)
+        newPath = "/Users/<<Your user account>>/Documents/Screenshots/{}".format(x)
 
         # function that moves the file
         def moveFile():
